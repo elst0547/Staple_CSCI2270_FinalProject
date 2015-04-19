@@ -23,4 +23,4 @@ by Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Open Issues/Bugs
 
-	TODO: List bugs and issues or anything we might want added
+	TODO: List bugs and issues or any functionality we might want added
