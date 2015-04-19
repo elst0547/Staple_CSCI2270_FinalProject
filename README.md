@@ -11,7 +11,7 @@ by Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Dependencies
 
-	TODO: Include third-party libraries or apis that may need installed to run
+	TODO: Include third-party libraries or APIs that may need installed to run
 
 ## System Requirements
 
