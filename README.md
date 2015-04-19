@@ -1,9 +1,12 @@
 # Staple_CSCI2270__FinalProject
-by Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
+
+## Group Members
+
+Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Project Summary
 
-	TODO: Describe project
+	We are going to make a database of music artists and songs and have features such as search, artist information, and youtube links. This enables people to search for artists, and after they have found the artist they can go and listen to their music and watch videos from youtube. Also links to soundcloud or other music sites might be implemented so if a song or artist wasn't on one site, they could be found another way through another site.
 
 ## How to Run
 
