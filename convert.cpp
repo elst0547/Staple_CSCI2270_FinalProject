@@ -6,42 +6,42 @@
 
 using namespace std;
 
-Graph::Graph()
+Converter::Converter()
 {
 
 }
 
-Graph::~Graph()
+Converter::~Converter()
 {
 
 }
 
-void Graph::addEdge(string v1, string v2, int weight)
+void Converter::addEdge(string v1, string v2, int weight)
 {
 
 }
 
-void Graph::addVertex(string n)
+void Converter::addVertex(string n)
 {
 
 }
 
-void Graph::displayEdges()
+void Converter::displayEdges()
 {
 
 }
 
-void Graph::shortestPath(string startingCity, string destination)
+void Converter::shortestPath(string startingCity, string destination)
 {
 
 }
 
-void Graph::findDistricts()
+void Converter::findDistricts()
 {
 
 }
 
-void Graph::shortestDistance(string startingCity, string destination)
+void Converter::shortestDistance(string startingCity, string destination)
 {
 
 }
