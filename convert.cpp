@@ -12,6 +12,12 @@ struct intLinkedList
 	intLinkedList *next;
 };
 
+struct stringLinkedList
+{
+	string title;
+	stringLinkedList *next;
+};
+
 Converter::~Converter()
 {
 
@@ -46,3 +52,5 @@ void Converter::shortestDistance(string startingCity, string destination)
 {
 
 }
+//----------------------------------------------------------------------------
+
