@@ -27,4 +27,4 @@ Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 ## Open Issues/Bugs
 
 	We want to make our functions able to be used with any type of data, not just strings.
-	We can't use the converted arrays because we don't know how to return arrays.
+	We can't return arrays from any of our functions so you can't use an array that has been created by converting from something else (i.e. can't use array from vectorToArray function in another function, check main).
