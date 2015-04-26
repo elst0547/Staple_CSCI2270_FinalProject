@@ -6,17 +6,10 @@ using namespace std;
 int main()
 {
     Converter *conv = new Converter();
-    cout<<"penis"<<endl;
     Tree *x = new Tree;
-    string *b;
-	string a[9] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin"};
-
-	/*cout<<"Array to Binary Search Tree(inorder): "<<endl;
-	for(int i = 0; i<9;i++)
-        x = conv->ArrToBst(a, 9);
-    conv->printNode(x);
-    cout<<"Binary Search Tree to Array: "<<endl;
-    conv->BstToArr(x, 9);*/
+    stringLinkedList *b;
+    vector<string> vec;
+	string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
     bool exit=false;
     int input = 0;
     while(exit!=true) //Main loop for actually running the "movie store"
@@ -36,47 +29,47 @@ int main()
         cin>>input;
         if(input==1)
         {
-            
+            b = conv->ConvertArrToLinkedList(a, 10);
         }
         if(input==2)
         {
-            
+            conv->ConvertLLToArray(b);
         }
         if(input==3)
         {
-            
+            conv->ConvertLLToVector(b);
         }
         if(input==4)
         {
-            
+            vec = conv->arrayToVector(a, 10);
         }
         if(input==5)
         {
-            
+            conv->vectorToArray(vec);
         }
         if(input==6)
         {
-            
+            conv->vectorToLinkedList(vec);
         }
         if(input==7)
         {
-            
+            conv->ArrayToHT(a, 10);
         }
         if(input==8)
         {
-            
+            conv->HTToArray();
         }
         if(input==9)
         {
             cout<<"Array to Binary Search Tree(inorder): "<<endl;
-            for(int i = 0; i<9;i++)
-                x = conv->ArrToBst(a, 9);
+            for(int i = 0; i<10;i++)
+                x = conv->ArrToBst(a, 10);
             conv->printNode(x);
         }
         if(input==10)
         {
             cout<<"Binary Search Tree to Array: "<<endl;
-            conv->BstToArr(x, 9);
+            conv->BstToArr(x, 10);
         }
         if(input==11)
         {

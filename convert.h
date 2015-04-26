@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <sstream> 
+#include <sstream>
 
 using namespace std;
 
@@ -15,8 +15,13 @@ struct stringLinkedList
 };
 
 struct HT{
-    std::string text;
+    string text;
     HT *next;
+    HT(){};
+    HT(string in_title)
+    {
+        text = in_title;
+    }
 };
 
 struct Tree{
@@ -34,17 +39,17 @@ class Converter{
 	public:
 		Converter();
 		~Converter();
-		stringLinkedList* ConvertArrToLinkedList(string array, int size);
+		stringLinkedList* ConvertArrToLinkedList(string array[], int size);
 		string* ConvertLLToArray(stringLinkedList* root);
 		vector<string> ConvertLLToVector(stringLinkedList* root);
-		vector<string> arrayToVector(string str[]);
+		vector<string> arrayToVector(string str[], int size);
 		string* vectorToArray(vector<string> vec);
 		stringLinkedList* vectorToLinkedList(vector<string> vec);
-		void ArrayToHT(string a[]);
+		void ArrayToHT(string a[], int size);
 		string* HTToArray();
 		Tree *ArrToBst(string arr[], int size);
 		void BstToArr(Tree *tree, int size);
 		void printNode(Tree * node);
-		Tree *root;
+		Tree *roots;
 };
 #endif // CONVERT_H

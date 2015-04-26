@@ -8,22 +8,20 @@ using namespace std;
 
 Converter::Converter()
 {
-	for(int i = 0;i<10;i++){
-        hashtable[i]->text = "empty";
-        hashtable[i]->next = NULL;
-    }
 }
 
 Converter::~Converter(){}
 
-stringLinkedList* Converter::ConvertArrToLinkedList(string array, int size)
+stringLinkedList* Converter::ConvertArrToLinkedList(string array[], int size)
 {
 	stringLinkedList *head = new stringLinkedList;
 	stringLinkedList *root = new stringLinkedList;
 	head->title = array[0];
 	root = head;
+	cout<<"hi"<<endl;
 	for(int i=1; i<size; i++)
 	{
+	    head->next = new stringLinkedList;
 		head->next->title = array[i];
 		head = head->next;
 	}
@@ -33,12 +31,13 @@ stringLinkedList* Converter::ConvertArrToLinkedList(string array, int size)
 		cout<<array[i]<<endl;
 	}
 	cout<<"This is your Linked List"<<endl;
+	head = root;
 	while(root->next != NULL)
 	{
 		cout<<root->title<<endl;
 		root = root->next;
 	}
-	return root;
+	return head;
 }
 
 string* Converter::ConvertLLToArray(stringLinkedList* root)
@@ -51,6 +50,7 @@ string* Converter::ConvertLLToArray(stringLinkedList* root)
 		count++;
 		root = root->next;
 	}
+	root = temp;
 	string array[count];
 	for(int i=0; i<count; i++)
 	{
@@ -75,7 +75,7 @@ string* Converter::ConvertLLToArray(stringLinkedList* root)
 vector<string> Converter::ConvertLLToVector(stringLinkedList* root)
 {
 	vector<string> vect;
-	int count;
+	int count = 0;
 	stringLinkedList *temp = new stringLinkedList;
 	temp = root;
 	while(root->next != NULL)
@@ -83,6 +83,8 @@ vector<string> Converter::ConvertLLToVector(stringLinkedList* root)
 		count++;
 		root = root->next;
 	}
+	root = temp;
+	cout<<count<<endl;
 	for(int i=0; i<count; i++)
 	{
 		vect.push_back(root->title);
@@ -102,12 +104,16 @@ vector<string> Converter::ConvertLLToVector(stringLinkedList* root)
 	return vect;
 }
 
-vector<string> Converter::arrayToVector(string str[])
+vector<string> Converter::arrayToVector(string str[], int size)
 {
     vector<string> vec;
-    for(int i = 0; i < sizeof(str); i++)
+    for(int i = 0; i < size; i++)
     {
         vec.push_back(str[i]);
+    }
+    for(int i = 0; i < vec.size(); i++)
+    {
+        cout<<vec[i]<<endl;
     }
     return vec;
 }
@@ -119,6 +125,10 @@ string* Converter::vectorToArray(vector<string> vec)
     for(int i = 0; i < vec.size(); i++)
     {
         str[i] = vec[i];
+    }
+    for(int i = 0; i < count; i++)
+    {
+        cout<<str[i]<<endl;
     }
     string *pointer = str;
     return pointer;
@@ -132,18 +142,30 @@ stringLinkedList* Converter::vectorToLinkedList(vector<string> vec)
     root = head;
     for(int i=1; i<vec.size(); i++)
     {
+        head->next = new stringLinkedList;
         head->next->title = vec[i];
+        head = head->next;
+    }
+    head = root;
+    while(head != NULL)
+    {
+        cout<<head->title<<endl;
         head = head->next;
     }
     return root;
 }
 
-void Converter::ArrayToHT(string a[]){
+void Converter::ArrayToHT(string a[], int size){
     int sum = 0;
     char letter;
-    for(int i = 0; i<sizeof(a);i++){
+    for(int i = 0; i<size;i++){
+        hashtable[i] = new HT;
+        hashtable[i]->text = "empty";
+        hashtable[i]->next = NULL;
+    }
+    for(int i = 0; i<size;i++){
         bool check = true;
-        for(int j = 0; i<a[i].length();i++){
+        for(int j = 0; j<a[i].length();j++){
             letter = (char)a[i][j];
             sum = sum + (int)letter;
         }
@@ -232,18 +254,17 @@ void Converter::printNode(Tree *x){
 Tree *Converter::ArrToBst(string arr[], int size){
     Tree *temp = new Tree();
     temp->name = arr[i];
-    cout<<i<<endl;
-    if(root == NULL){
-        root = temp;
-        root->parent = NULL;
-        root->right = NULL;
-        root->left = NULL;
+    if(roots == NULL){
+        roots = temp;
+        roots->parent = NULL;
+        roots->right = NULL;
+        roots->left = NULL;
         i++;
     }
     else{
 
         Tree *y = NULL;
-        Tree *x = root;
+        Tree *x = roots;
         Tree *z = temp;
         while(x!=NULL){
             y = x;
@@ -266,10 +287,10 @@ Tree *Converter::ArrToBst(string arr[], int size){
             z->right = NULL;
         }
         i++;
-        return root;
+        return roots;
     }
 }
- 
+
 void Converter::BstToArr(Tree* x, int size){
     string *names = new string[size];
     if (x->left != NULL){
