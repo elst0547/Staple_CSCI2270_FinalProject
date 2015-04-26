@@ -26,5 +26,5 @@ Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Open Issues/Bugs
 
-	We want to add a main menu so we can have the option to select different functions and do different conversions.
 	We want to make our functions able to be used with any type of data, not just strings.
+	We can't use the converted arrays because we don't know how to return arrays.
