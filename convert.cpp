@@ -6,21 +6,12 @@
 
 using namespace std;
 
-<<<<<<< Updated upstream
-Converter::Converter()
-=======
 struct intLinkedList
->>>>>>> Stashed changes
 {
 	int value;
 	intLinkedList *next;
 };
 
-<<<<<<< Updated upstream
-}
-
-=======
->>>>>>> Stashed changes
 Converter::~Converter()
 {
 
