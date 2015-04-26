@@ -10,7 +10,7 @@ Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## How to Run
 
-	TODO: Explain how to run program
+	Compile with g++ compiler and run in the terminal.
 
 ## Dependencies
 
@@ -26,4 +26,5 @@ Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Open Issues/Bugs
 
-	TODO: List bugs and issues or any functionality we might want added
+	We want to add a main menu so we can have the option to select different functions and do different conversions.
+	We want to make our functions able to be used with any type of data, not just strings.
