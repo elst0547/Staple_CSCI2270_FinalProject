@@ -14,17 +14,24 @@ struct stringLinkedList
 	stringLinkedList *next;
 };
 
+struct HT{
+    std::string text;
+    HT *next;
+};
+
 class Converter{
 	private:
-	
+		HT *hashtable[10];
 	public:
-		Converter();
-		~Converter();
-		City* NewVCity();
-		stringLinkedList ConvertArrToLinkedList(string array, int size);
-		string* ConvertLLToArray(stringLinkedList root);
-		vector<string> arrayToVector(string[] str);
-		string* vectorToArray(vector<string> vec);
-		stringLinkedList vectorToLinkedList(vector<string> vec)
+		Converter::Converter();
+		Converter::~Converter();
+		City* Converter::NewVCity();
+		stringLinkedList Converter::Converter::ConvertArrToLinkedList(string array, int size);
+		string* Converter::ConvertLLToArray(stringLinkedList root);
+		vector<string> Converter::arrayToVector(string[] str);
+		string* Converter::vectorToArray(vector<string> vec);
+		stringLinkedList Converter::vectorToLinkedList(vector<string> vec);
+		void Converter::ArrayToHT(string a[]);
+		string* Converter::HTToArray();
 };
 #endif // CONVERT_H
