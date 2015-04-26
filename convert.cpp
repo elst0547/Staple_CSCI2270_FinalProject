@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void Converter::Converter()
+Converter::Converter()
 {
 	for(int i = 0;i<10;i++){
         hashtable[i]->text = "empty";
@@ -14,9 +14,9 @@ void Converter::Converter()
     }
 }
 
-void Converter::~Converter(){}
+Converter::~Converter(){}
 
-stringLinkedList Converter::ConvertArrToLinkedList(string array, int size)
+stringLinkedList* Converter::ConvertArrToLinkedList(string array, int size)
 {
 	stringLinkedList *head = new stringLinkedList;
 	stringLinkedList *root = new stringLinkedList;
@@ -41,7 +41,7 @@ stringLinkedList Converter::ConvertArrToLinkedList(string array, int size)
 	return root;
 }
 
-string* Converter::ConvertLLToArray(stringLinkedList root)
+string* Converter::ConvertLLToArray(stringLinkedList* root)
 {
 	int count = 0;
 	stringLinkedList *temp = new stringLinkedList;
@@ -72,7 +72,7 @@ string* Converter::ConvertLLToArray(stringLinkedList root)
 	return pointer;
 }
 
-vector<string> Converter::ConvertLLToVector(stringLinkedList root)
+vector<string> Converter::ConvertLLToVector(stringLinkedList* root)
 {
 	vector<string> vect;
 	int count;
@@ -85,7 +85,7 @@ vector<string> Converter::ConvertLLToVector(stringLinkedList root)
 	}
 	for(int i=0; i<count; i++)
 	{
-		vect.add(root->title)
+		vect.push_back(root->title);
 		root = root->next;
 	}
 	cout<<"This is your Linked List"<<endl;
@@ -102,19 +102,20 @@ vector<string> Converter::ConvertLLToVector(stringLinkedList root)
 	return vect;
 }
 
-vector<string> Converter::arrayToVector(string[] str)
+vector<string> Converter::arrayToVector(string str[])
 {
     vector<string> vec;
     for(int i = 0; i < sizeof(str); i++)
     {
-        vec.add(str[i]);
+        vec.push_back(str[i]);
     }
     return vec;
 }
 
 string* Converter::vectorToArray(vector<string> vec)
 {
-    string str[vec.size()] = {};
+	int count = vec.size();
+    string str[count];
     for(int i = 0; i < vec.size(); i++)
     {
         str[i] = vec[i];
@@ -123,12 +124,12 @@ string* Converter::vectorToArray(vector<string> vec)
     return pointer;
 }
 
-stringLinkedList Converter::vectorToLinkedList(vector<string> vec)
+stringLinkedList* Converter::vectorToLinkedList(vector<string> vec)
 {
     stringLinkedList *head = new stringLinkedList;
     stringLinkedList *root = new stringLinkedList;
     head->title = vec[0];
-    root = head
+    root = head;
     for(int i=1; i<vec.size(); i++)
     {
         head->next->title = vec[i];
@@ -211,6 +212,75 @@ string* Converter::HTToArray(){
         hashtable[i]->text = "empty";
         hashtable[i]->next = NULL;
     }
+    cout<<"HashTable To Array:"<<endl;
+    for(int i = 0;i<count;i++){
+        cout<<array[i]<<endl;
+    }
     string *pointer = array;
     return pointer;
+}
+
+void Converter::printNode(Tree *x){
+
+    if (x->left != NULL)
+        printNode(x->left);
+    cout<<"Name: "<<x->name<<endl;
+    if (x->right != NULL)
+        printNode(x->right);
+}
+
+Tree *Converter::ArrToBst(string arr[], int size){
+    Tree *temp = new Tree();
+    temp->name = arr[i];
+    cout<<i<<endl;
+    if(root == NULL){
+        root = temp;
+        root->parent = NULL;
+        root->right = NULL;
+        root->left = NULL;
+        i++;
+    }
+    else{
+
+        Tree *y = NULL;
+        Tree *x = root;
+        Tree *z = temp;
+        while(x!=NULL){
+            y = x;
+            if(x->name.compare(arr[i]) > 0){
+                x = x->left;
+            }
+            else if(x->name.compare(arr[i]) <= 0){
+                x = x->right;
+            }
+        }
+        z->parent = y;
+        if(y->name.compare(arr[i]) > 0){
+            y->left = z;
+            z->left = NULL;
+            z->right = NULL;
+        }
+        else{
+            y->right = z;
+            z->left = NULL;
+            z->right = NULL;
+        }
+        i++;
+        return root;
+    }
+}
+ 
+void Converter::BstToArr(Tree* x, int size){
+    string *names = new string[size];
+    if (x->left != NULL){
+        BstToArr(x->left, size);
+        counter++;
+    }
+    names[counter] = x->name;
+    cout<<names[counter]<<endl;
+    if (x->right != NULL){
+        BstToArr(x->right, size);
+        counter++;
+    }
+    //return names;
 }

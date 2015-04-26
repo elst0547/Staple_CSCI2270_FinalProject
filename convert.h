@@ -19,19 +19,32 @@ struct HT{
     HT *next;
 };
 
+struct Tree{
+    string name;
+    Tree *parent;
+    Tree *left;
+    Tree *right;
+};
+
 class Converter{
 	private:
 		HT *hashtable[10];
+		int i = 0;
+		int counter = 0;
 	public:
-		Converter::Converter();
-		Converter::~Converter();
-		City* Converter::NewVCity();
-		stringLinkedList Converter::Converter::ConvertArrToLinkedList(string array, int size);
-		string* Converter::ConvertLLToArray(stringLinkedList root);
-		vector<string> Converter::arrayToVector(string[] str);
-		string* Converter::vectorToArray(vector<string> vec);
-		stringLinkedList Converter::vectorToLinkedList(vector<string> vec);
-		void Converter::ArrayToHT(string a[]);
-		string* Converter::HTToArray();
+		Converter();
+		~Converter();
+		stringLinkedList* ConvertArrToLinkedList(string array, int size);
+		string* ConvertLLToArray(stringLinkedList* root);
+		vector<string> ConvertLLToVector(stringLinkedList* root);
+		vector<string> arrayToVector(string str[]);
+		string* vectorToArray(vector<string> vec);
+		stringLinkedList* vectorToLinkedList(vector<string> vec);
+		void ArrayToHT(string a[]);
+		string* HTToArray();
+		Tree *ArrToBst(string arr[], int size);
+		void BstToArr(Tree *tree, int size);
+		void printNode(Tree * node);
+		Tree *root;
 };
 #endif // CONVERT_H
