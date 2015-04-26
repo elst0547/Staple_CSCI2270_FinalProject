@@ -6,6 +6,14 @@
 #include <string>
 #include <sstream> 
 
+using namespace std;
+
+struct stringLinkedList
+{
+	string title;
+	stringLinkedList *next;
+};
+
 class Converter{
 	private:
 	
@@ -13,11 +21,10 @@ class Converter{
 		Converter();
 		~Converter();
 		City* NewVCity();
-		void addEdge(std::string v1, std::string v2, int weight);
-		void addVertex(std::string n);
-		void displayEdges();
-		void shortestPath(std::string startingCity, std::string destination);
-		void findDistricts();
-		void shortestDistance(std::string startingCity, std::string destination);
+		stringLinkedList ConvertArrToLinkedList(string array, int size);
+		string* ConvertLLToArray(stringLinkedList root);
+		vector<string> arrayToVector(string[] str);
+		string* vectorToArray(vector<string> vec);
+		stringLinkedList vectorToLinkedList(vector<string> vec)
 };
 #endif // CONVERT_H
