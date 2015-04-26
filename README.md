@@ -6,7 +6,7 @@ Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Project Summary
 
-	We are going to make a database of music artists and songs and have features such as search, artist information, and youtube links. This enables people to search for artists, and after they have found the artist they can go and listen to their music and watch videos from youtube. Also links to soundcloud or other music sites might be implemented so if a song or artist wasn't on one site, they could be found another way through another site.
+	We are going to make a library of different functions that can be included and used by anyone. The purpose of our library will be to provide the user functions that allow them to change from one kind of data structure to another. For example we will have a function that allows a person to pass in an array and then return a tree with all the data from the array organized in a tree.
 
 ## How to Run
 
