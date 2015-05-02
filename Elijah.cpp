@@ -10,7 +10,7 @@ int main()
     stringLinkedList *b;
     b = conv->ConvertArrToLinkedList(a, 10, true);
     vector<string> vec;
-	string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
+    string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
     bool exit=false;
     string input; // input is a string variable
     while(exit!=true) //Main loop for actually running the "movie store"
@@ -78,7 +78,7 @@ int main()
             cout<<"Goodbye!"<<endl;
         }
         else{ // prevent infinite loop
-			cout<<"Please select a menu option."<<endl;
-		}
+		cout<<"Please select a menu option."<<endl;
+	}
     }
 }
