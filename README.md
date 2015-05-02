@@ -22,7 +22,7 @@ Elijah Staple, Elias Ortiz, Andrew Callahan, and Kevin Flynn
 
 ## Contributors
 
-	TODO: List people who contribute (Phase 3)
+	mcferrall, ermontross
 
 ## Open Issues/Bugs
 
