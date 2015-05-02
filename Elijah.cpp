@@ -8,6 +8,7 @@ int main()
     Converter *conv = new Converter();
     Tree *x = new Tree;
     stringLinkedList *b;
+    b = conv->ConvertArrToLinkedList(a, 10, true);
     vector<string> vec;
 	string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
     bool exit=false;
@@ -29,7 +30,7 @@ int main()
         cin>>input;
         if(input==1)
         {
-            b = conv->ConvertArrToLinkedList(a, 10);
+            b = conv->ConvertArrToLinkedList(a, 10, false);
         }
         if(input==2)
         {
