@@ -1,5 +1,7 @@
 #include "convert.h"
 #include <vector>
+#include <string>
+#include <stdlib.h>
 #include <iostream>
 #include <climits>
 #include <queue>
@@ -12,7 +14,7 @@ Converter::Converter()
 
 Converter::~Converter(){}
 
-stringLinkedList* Converter::ConvertArrToLinkedList(string array[], int size, bool first)
+stringLinkedList* Converter::ConvertArrToLinkedList(string array[], int size)
 {
 	stringLinkedList *head = new stringLinkedList;
 	stringLinkedList *root = new stringLinkedList;
@@ -25,19 +27,17 @@ stringLinkedList* Converter::ConvertArrToLinkedList(string array[], int size, bo
 		head->next->title = array[i];
 		head = head->next;
 	}
-	if(!first){
-        cout<<"This is your array"<<endl;
-        for(int i=0; i<size; i++)
-        {
-            cout<<array[i]<<endl;
-        }
-        cout<<"This is your Linked List"<<endl;
-        head = root;
-        while(root->next != NULL)
-        {
-            cout<<root->title<<endl;
-            root = root->next;
-        }
+	cout<<"This is your array"<<endl;
+	for(int i=0; i<size; i++)
+	{
+		cout<<array[i]<<endl;
+	}
+	cout<<"This is your Linked List"<<endl;
+	head = root;
+	while(root->next != NULL)
+	{
+		cout<<root->title<<endl;
+		root = root->next;
 	}
 	return head;
 }
@@ -307,3 +307,6 @@ void Converter::BstToArr(Tree* x, int size){
     }
     //return names;
 }
+
+
+
