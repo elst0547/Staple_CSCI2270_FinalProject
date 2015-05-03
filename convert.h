@@ -39,7 +39,7 @@ class Converter{
 	public:
 		Converter();
 		~Converter();
-		stringLinkedList* ConvertArrToLinkedList(string array[], int size, bool first);
+		stringLinkedList* ConvertArrToLinkedList(string array[], int size);
 		string* ConvertLLToArray(stringLinkedList* root);
 		vector<string> ConvertLLToVector(stringLinkedList* root);
 		vector<string> arrayToVector(string str[], int size);
