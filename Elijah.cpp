@@ -8,9 +8,9 @@ int main()
     Converter *conv = new Converter();
     Tree *x = new Tree;
     stringLinkedList *b;
-    b = conv->ConvertArrToLinkedList(a, 10, true);
     vector<string> vec;
     string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
+    b = conv->ConvertArrToLinkedList(a, 10, true);
     bool exit=false;
     string input; // input is a string variable
     while(exit!=true) //Main loop for actually running the "movie store"

@@ -178,6 +178,7 @@ void Converter::ArrayToHT(string a[], int size){
         }
         HT *m = new HT;
         m->text = a[i];
+        m->next = NULL;
         HT *x = hashtable[sum];
         while(check == true){
             if(x->next == NULL){
@@ -193,7 +194,7 @@ void Converter::ArrayToHT(string a[], int size){
             cout<<"Index["<<i<<"] "<<hashtable[i]->text<<"->";
             HT *x = hashtable[i];
             while(x->next != NULL){
-                cout<<x->next->text<<"->";
+                cout << x->next->text << "->";
                 x=x->next;
             }
             cout<<endl;
