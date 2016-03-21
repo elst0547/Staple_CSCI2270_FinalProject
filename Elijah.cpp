@@ -1,5 +1,6 @@
 #include <iostream>
 #include "convert.h"
+#include <stdlib.h>
 
 using namespace std;
 
@@ -8,11 +9,71 @@ int main()
     Converter *conv = new Converter();
     Tree *x = new Tree;
     stringLinkedList *b;
-    b = conv->ConvertArrToLinkedList(a, 10, true);
     vector<string> vec;
-    string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
+
+//_____________*******START BLAINE'S CONTRIBUTION******___________//
+    int arraySize = 10;
+    string a[arraySize];
+    cout << "Please enter 10 string values for your initial array." << endl;
+    //Start the user input.
+    for(int i = 0; i < arraySize; i++)
+    {
+        //Used to check if the user input is a string and NOT an integer.
+        bool checkInput = true;
+
+        //While the input is true, do the following.
+        while(checkInput = true)
+        {
+            //Take in user input for array values.
+            string arrValue;
+            cout << "What would you like to place in index " << i << " ?" << endl;
+            cin >> arrValue;
+
+            //Begin the check process by using strtol to convert to a long int.
+            char *ptr;
+            long converted = strtol(arrValue.c_str(), &ptr, 10);
+
+            //If the pointer is returned, input is valid and should be added to the array.
+            if(*ptr)
+            {
+                //cout << "IT'S A STRING!" << endl;
+                a[i] = arrValue;
+                checkInput = true;
+                break;
+            }
+            //Otherwise, the input is not a string and should not be added to the array.
+            //Users should be redirected to add another input in the same index.
+            else
+            {
+                cout << "Invalid input. Please enter strings as array values." << endl;
+                checkInput = false;
+            }
+        }
+    }
+
+    //Display the array that the user has created.
+    cout << "Your starting array is: " << endl;
+    for(int j = 0; j < arraySize; j++)
+    {
+        //Start the array with a curly bracket. Just for ease of reading.
+        if(j == 0)
+        {
+            cout << "{";
+        }
+        //End the array with a curly bracket. Just for ease of reading.
+        if(j == arraySize - 1)
+        {
+            cout << a[j] << "}" << endl;
+            break;
+        }
+        //Otherwise, display the array values followed by a comma.
+        cout << a[j] << ", ";
+    }
+//_____________*******END BLAINE'S CONTRIBUTION******___________//
+
+	//string a[10] = {"Kevin","Elijah","Andrew","Elias","Flynn","Callahan","Staple","Ortiz","Calvin", "Stoehr"};
     bool exit=false;
-    string input; // input is a string variable
+    int input = 0;
     while(exit!=true) //Main loop for actually running the "movie store"
     {
         cout<<"======Main Menu======"<<endl;
@@ -28,57 +89,54 @@ int main()
         cout<<"10. Convert binary search tree to array"<<endl;
         cout<<"11. Quit"<<endl;
         cin>>input;
-        if(input=="1")
+        if(input==1)
         {
-            b = conv->ConvertArrToLinkedList(a, 10, false);
+            b = conv->ConvertArrToLinkedList(a, 10);
         }
-        else if(input=="2")
+        if(input==2)
         {
             conv->ConvertLLToArray(b);
         }
-        else if(input=="3")
+        if(input==3)
         {
             conv->ConvertLLToVector(b);
         }
-        else if(input=="4")
+        if(input==4)
         {
             vec = conv->arrayToVector(a, 10);
         }
-        else if(input=="5")
+        if(input==5)
         {
             conv->vectorToArray(vec);
         }
-        else if(input=="6")
+        if(input==6)
         {
             conv->vectorToLinkedList(vec);
         }
-        else if(input=="7")
+        if(input==7)
         {
             conv->ArrayToHT(a, 10);
         }
-        else if(input=="8")
+        if(input==8)
         {
             conv->HTToArray();
         }
-        else if(input=="9")
+        if(input==9)
         {
             cout<<"Array to Binary Search Tree(inorder): "<<endl;
             for(int i = 0; i<10;i++)
                 x = conv->ArrToBst(a, 10);
             conv->printNode(x);
         }
-        else if(input=="10")
+        if(input==10)
         {
             cout<<"Binary Search Tree to Array: "<<endl;
             conv->BstToArr(x, 10);
         }
-        else if(input=="11")
+        if(input==11)
         {
             exit=true;
             cout<<"Goodbye!"<<endl;
         }
-        else{ // prevent infinite loop
-		cout<<"Please select a menu option."<<endl;
-	}
     }
 }
